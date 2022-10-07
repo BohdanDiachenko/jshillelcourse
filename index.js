@@ -1,4 +1,5 @@
 
+
 // let arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?');
 // let result;
 // if(arithmeticOperations === 'add' || arithmeticOperations === 'sub' || arithmeticOperations === 'mult' || arithmeticOperations === 'div'){
@@ -62,6 +63,16 @@ switch (arithmeticOperations = prompt('що ви хочете зробити(add
         break;
 };
 
+let firstNumber = +prompt('введіть перше число');
+let secondNumber = +prompt('введіть друге число');
+let add = `${firstNumber}+${secondNumber} = ${firstNumber + secondNumber}`;
+let sub = `${firstNumber}-${secondNumber} = ${firstNumber - secondNumber}`;
+let mult = `${firstNumber}*${secondNumber} = ${firstNumber * secondNumber}`;
+let div = `${firstNumber}/${secondNumber} = ${firstNumber / secondNumber}`;
+let resolt = `Ваш результат:\n${add}\n${sub}\n${mult}\n${div}`;
+alert(resolt);
+
+
 //homework2/1
 
 // let surName = prompt ('Enter your last name');
@@ -88,3 +99,4 @@ switch (arithmeticOperations = prompt('що ви хочете зробити(add
 //     newString += `${string[i]} `;
 // };
 // console.log(newString);
+
