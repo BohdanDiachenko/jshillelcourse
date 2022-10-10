@@ -29,48 +29,48 @@
 
 
 
-let arithmeticOperations;
-let oneNumber;
-let twoNumber
-switch (arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?')) {
+// let arithmeticOperations;
+// let oneNumber;
+// let twoNumber
+// switch (arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?')) {
 
-    case a = "add":
-        oneNumber = +(prompt('введіть перше число'));
-        twoNumber = +(prompt('введіть друге число'));
-        alert(`${oneNumber} + ${twoNumber} = ${oneNumber + twoNumber}`);
-        break;
+//     case a = "add":
+//         oneNumber = +(prompt('введіть перше число'));
+//         twoNumber = +(prompt('введіть друге число'));
+//         alert(`${oneNumber} + ${twoNumber} = ${oneNumber + twoNumber}`);
+//         break;
 
-    case "sub":
-        oneNumber = +(prompt('введіть перше число'));
-        twoNumber = +(prompt('введіть друге число'));
-        alert(`${oneNumber} - ${twoNumber} = ${oneNumber - twoNumber}`);
-        break;
+//     case "sub":
+//         oneNumber = +(prompt('введіть перше число'));
+//         twoNumber = +(prompt('введіть друге число'));
+//         alert(`${oneNumber} - ${twoNumber} = ${oneNumber - twoNumber}`);
+//         break;
 
-    case "mult":
-        oneNumber = +(prompt('введіть перше число'));
-        twoNumber = +(prompt('введіть друге число'));
-        alert(`${oneNumber} * ${twoNumber} = ${oneNumber * twoNumber}`);;
-        break;
+//     case "mult":
+//         oneNumber = +(prompt('введіть перше число'));
+//         twoNumber = +(prompt('введіть друге число'));
+//         alert(`${oneNumber} * ${twoNumber} = ${oneNumber * twoNumber}`);;
+//         break;
 
-    case "div":
-        oneNumber = +(prompt('введіть перше число'));
-        twoNumber = +(prompt('введіть друге число'));
-        alert(`${oneNumber} / ${twoNumber} = ${oneNumber / twoNumber}`);;
-        break;
+//     case "div":
+//         oneNumber = +(prompt('введіть перше число'));
+//         twoNumber = +(prompt('введіть друге число'));
+//         alert(`${oneNumber} / ${twoNumber} = ${oneNumber / twoNumber}`);;
+//         break;
         
-    default:
-        alert("Читай умову!");
-        break;
-};
+//     default:
+//         alert("Читай умову!");
+//         break;
+// };
 
-let firstNumber = +prompt('введіть перше число');
-let secondNumber = +prompt('введіть друге число');
-let add = `${firstNumber}+${secondNumber} = ${firstNumber + secondNumber}`;
-let sub = `${firstNumber}-${secondNumber} = ${firstNumber - secondNumber}`;
-let mult = `${firstNumber}*${secondNumber} = ${firstNumber * secondNumber}`;
-let div = `${firstNumber}/${secondNumber} = ${firstNumber / secondNumber}`;
-let resolt = `Ваш результат:\n${add}\n${sub}\n${mult}\n${div}`;
-alert(resolt);
+// let firstNumber = +prompt('введіть перше число');
+// let secondNumber = +prompt('введіть друге число');
+// let add = `${firstNumber}+${secondNumber} = ${firstNumber + secondNumber}`;
+// let sub = `${firstNumber}-${secondNumber} = ${firstNumber - secondNumber}`;
+// let mult = `${firstNumber}*${secondNumber} = ${firstNumber * secondNumber}`;
+// let div = `${firstNumber}/${secondNumber} = ${firstNumber / secondNumber}`;
+// let resolt = `Ваш результат:\n${add}\n${sub}\n${mult}\n${div}`;
+// alert(resolt);
 
 
 //homework2/1
