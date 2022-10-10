@@ -6,15 +6,17 @@ let answer;
 let getAge = +prompt('Введіть рік вашого народження');
 if (getAge === 0){
     alert('Шкода, що Ви не захотіли ввести свій рік народження')
-};
+} else if(getAge >= currentYear){
+    alert('ви ще не народились');
+}
 
 let getResidence = prompt('Введіть ваше місце проживання');
-if (getResidence === null){
+if (getResidence === null || getResidence === ''){
     alert('Шкода, що Ви не захотіли ввести свіє місце проживання');
 };
 
 let getKindOfSport = prompt('Введіть ваш улюблений вид спорту');
-if (getKindOfSport === null){
+if (getKindOfSport === null || getKindOfSport === ''){
     alert('Шкода, що Ви не захотіли ввести свій улюбленний вид спорту');
 };
 
@@ -28,11 +30,14 @@ switch (getResidence) {
     case 'Лондон':
         cityOfResidence = 'Ти живеш у столиці Англії\n';
         break;
-    case null:
-        cityOfResidence = '';
-        break;
-
-    default: cityOfResidence = `Ти живеш місті ${getResidence}\n`;
+        case '':
+            cityOfResidence = '';
+            break;
+        case null:
+            cityOfResidence = '';
+            break;
+        
+    default: cityOfResidence = `Ти живеш у місті ${getResidence}\n`;
         break;
 };
 switch (getKindOfSport) {
@@ -53,7 +58,7 @@ switch (getKindOfSport) {
         break;
 };
 
-answer = (getAge ? `Ваш вік ${currentYear - getAge}.\n` : '') +  `${cityOfResidence}${sportLegend}`;
+answer = (getAge && getAge <= currentYear ? `Ваш вік ${currentYear - getAge}.\n` : '') +  `${cityOfResidence}${sportLegend}`;
 
 if(getAge || cityOfResidence || sportLegend){
     alert(answer);
