@@ -1,13 +1,11 @@
 // - Вивести на сторінку в один рядок через кому числа від 10 до 20
 
-
 // 1/2
-let result = '';
-for (let i = 10; i <= 20; i++){
-    result =  `${result + i}, `;
-}
-document.write(result); 
-
+// let result = '';
+// for (let i = 10; i <= 20; i++){
+//     result =  `${result + i}, `;
+// }
+// document.write(result);
 
 // 2/2
 // const ten = 10;
@@ -18,19 +16,15 @@ document.write(result);
 //         result =  `${result + i}, `;
 //     }
 // }
-// document.write(result); 
-
+// document.write(result);
 
 // - Вивести квадрати чисел від 10 до 20
-
 
 // let result = '';
 // for (let i = 10; i <= 20; i++){
 //     result +=  `${i ** 2}, `;
 // };
-// document.write(result); 
-
-
+// document.write(result);
 
 // - Вивести таблицю множення на 7
 
@@ -41,10 +35,6 @@ document.write(result);
 //     document.write(`${x} * ${numberSeven} = ${x*numberSeven}<br>`)
 // }
 
-
-
-
-
 // -Знайти суму всіх цілих чисел від 1 до 15
 
 // const numberFifteen = 15;
@@ -54,21 +44,17 @@ document.write(result);
 // }
 // alert(sumOfIntegers);
 
-
-
 // -Знайти добуток усіх цілих чисел від 15 до 35
 
 // const numberFifteen = 15;
 // const numberThirtyFive = 35;
-// let sumOfIntegers = 0;
+// let sumOfIntegers = 1;
 // for (let x = 1; x <= numberThirtyFive; x++){
 //     if(x >= numberFifteen) {
-//         sumOfIntegers += x;
+//         sumOfIntegers *= x;
 //     }
 // }
 // alert(sumOfIntegers);
-
-
 
 // -Знайти середнє арифметичне всіх цілих чисел від 1 до 500
 
@@ -83,7 +69,6 @@ document.write(result);
 // }
 // alert(arithmeticMean);
 
-
 // 2/2
 // const numberFiveHundred = 500;
 // let arithmeticMean = 0;
@@ -95,7 +80,6 @@ document.write(result);
 //     }
 // }
 // alert(arithmeticMean);
-
 
 // -Вивести суму лише парних чисел в діапазоні від 30 до 80
 
@@ -110,7 +94,6 @@ document.write(result);
 // }
 // alert(sumOfIntegers);
 
-
 // 2/2
 // const numberEighty = 80;
 // let sumOfIntegers = 0;
@@ -119,9 +102,7 @@ document.write(result);
 // }
 // alert(sumOfIntegers);
 
-
 // - Вивести всі числа в діапазоні від 100 до 200 кратні 3
-
 
 // const oneHundred = 100;
 // const twoHundred = 200;
@@ -133,14 +114,9 @@ document.write(result);
 // }
 // alert(sumOfIntegers);
 
-
-
-
-
 // -Дано натуральне число. Знайти та вивести на сторінку всі його дільники.
 // -Визначити кількість його парних дільників.
 // -Знайти суму його парних дільників.
-
 
 // let aNaturalNumber = Math.floor(Math.random() * 1000) + 1;
 // let result = '';
@@ -161,12 +137,7 @@ document.write(result);
 //     document.write(`${numberOfEvenDivisors} - кількість його парних дільників<br>`);
 //     document.write(`${sumOfEvenDivisors} сума його парних дільників`);
 
-
-
-
-
 // -Надрукувати повну таблицю множення від 1 до 10
-
 
 // 1/2
 // Щоб код працював коректно, потрібно розкоментувати main в index.html
@@ -182,7 +153,6 @@ document.write(result);
 //     document.getElementById(`cell-${x}`).style.background = `rgb(${x*17}, ${x*18}, 225, 0.3)`;
 //     result = '';
 // };
-
 
 // 2/2
 
