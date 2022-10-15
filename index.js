@@ -1,102 +1,158 @@
+// Дан масив [16,-37,54,-4,72,-56,47,4, -16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47]
+// Знайти суму та кількість позитивних елементів.
 
+const arrNumbers = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let amountPositiveElements = 0;
+const arrNumbersSum = arrNumbers.reduce((accum, item) => {
+    if (item > 0) {
+        accum += item;
+        amountPositiveElements++;
+    }
+    return accum;
+}, 0);
+console.log(arrNumbersSum);
+console.log(amountPositiveElements);
 
-// let arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?');
-// let result;
-// if(arithmeticOperations === 'add' || arithmeticOperations === 'sub' || arithmeticOperations === 'mult' || arithmeticOperations === 'div'){
-//     let oneNumber = +(prompt('введіть перше число'));
-//     let twoNumber = +(prompt('введіть друге число'));
-//     if(arithmeticOperations === 'add'){
-//         arithmeticOperations = '+';
-//         result = oneNumber + twoNumber;
-//     };
-//     if (arithmeticOperations === 'sub'){
-//         arithmeticOperations = '-';
-//         result = oneNumber - twoNumber;
-//     };
-//     if (arithmeticOperations === 'mult'){
-//         arithmeticOperations = '*';
-//         result = oneNumber * twoNumber;
-//     };  
-//     if (arithmeticOperations === 'div'){
-//         arithmeticOperations = '/';
-//         result = oneNumber / twoNumber;
-//     };
-//     alert(`${oneNumber} ${arithmeticOperations} ${twoNumber} = ${result}`);
-// } 
-// else {
-//     alert('читай умову');
-// };
+// Знайти мінімальний елемент масиву та його порядковий номер.
 
+let arrNumbers1 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let sequenceNumberMinEl;
+let minArrayElement = arrNumbers1.reduce((accum, item, index) => {
+    if (item < accum) {
+        accum = item;
+        sequenceNumberMinEl = index;
+    }
+    return accum;
+});
+console.log(minArrayElement);
+console.log(sequenceNumberMinEl);
 
+// Знайти максимальний елемент масиву та його порядковий номер
 
-// let arithmeticOperations;
-// let oneNumber;
-// let twoNumber
-// switch (arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?')) {
+let arrNumbers2 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let sequenceNumberMaxEl;
+let maxArrayElement = arrNumbers2.reduce((accum, item, index) => {
+    if (item > accum) {
+        accum = item;
+        sequenceNumberMaxEl = index;
+    }
+    return accum;
+});
+console.log(maxArrayElement);
+console.log(sequenceNumberMaxEl);
 
-//     case a = "add":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} + ${twoNumber} = ${oneNumber + twoNumber}`);
-//         break;
+// Визначити кількість негативних елементів.
 
-//     case "sub":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} - ${twoNumber} = ${oneNumber - twoNumber}`);
-//         break;
+let arrNumbers3 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let amountNegativeElements = 0;
+arrNumbers3.sort((item) => {
+    if (item < 0) {
+        amountNegativeElements++;
+    }
+    return accum;
+});
+console.log(amountNegativeElements);
 
-//     case "mult":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} * ${twoNumber} = ${oneNumber * twoNumber}`);;
-//         break;
+// Знайти кількість непарних позитивних елементів.
 
-//     case "div":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} / ${twoNumber} = ${oneNumber / twoNumber}`);;
-//         break;
-        
-//     default:
-//         alert("Читай умову!");
-//         break;
-// };
+let arrNumbers4 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let amountOddPositiveEl = 0;
+arrNumbers4.sort((item) => {
+    if (item > 0 && item % 2 !== 0) {
+        amountOddPositiveEl++;
+    }
+    return accum;
+});
+console.log(amountOddPositiveEl);
 
-// let firstNumber = +prompt('введіть перше число');
-// let secondNumber = +prompt('введіть друге число');
-// let add = `${firstNumber}+${secondNumber} = ${firstNumber + secondNumber}`;
-// let sub = `${firstNumber}-${secondNumber} = ${firstNumber - secondNumber}`;
-// let mult = `${firstNumber}*${secondNumber} = ${firstNumber * secondNumber}`;
-// let div = `${firstNumber}/${secondNumber} = ${firstNumber / secondNumber}`;
-// let resolt = `Ваш результат:\n${add}\n${sub}\n${mult}\n${div}`;
-// alert(resolt);
+// Знайти кількість парних позитивних елементів.
 
+let arrNumbers5 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let amountEvenPositiveEl = 0;
+arrNumbers5.sort((item) => {
+    if (item > 0 && item % 2 === 0) {
+        amountEvenPositiveEl++;
+    }
+    return accum;
+});
+console.log(amountEvenPositiveEl);
 
-//homework2/1
+// Знайти суму парних позитивних елементів.
 
-// let surName = prompt ('Enter your last name');
+let arrNumbers6 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let sumEvenPositiveEl = arrNumbers6.reduce((accum, item) => {
+    if (item > 0 && item % 2 === 0) {
+        accum += item;
+    }
+    return accum;
+});
+console.log(sumEvenPositiveEl);
 
-// let firstName = prompt('Enter your firs name');
+// Знайти суму непарних позитивних елементів.
 
-// let patronymic = prompt('Enter your middle name');
+let arrNumbers7 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let sumOddPositiveEl = arrNumbers7.reduce((accum, item) => {
+    if (item > 0 && item % 2 !== 0) {
+        accum += item;
+    }
+    return accum;
+});
+console.log(sumOddPositiveEl);
 
-// let greeting = 'good morning ' + surName + ' ' + firstName + ' ' + patronymic;
-// // let greeting = `Good Morning ${surName} ${firstName} ${patronymic}`;
+// Знайти добуток позитивних елементів.
 
+let arrNumbers8 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let productPositiveEl = arrNumbers8.reduce((accum, item) => {
+    if (item > 0) {
+        accum *= item;
+    }
+    return accum;
+});
+console.log(productPositiveEl);
 
-// alert(greeting);
+// Знайти найбільший серед елементів масиву, остальні обнулити.
 
-
-
-
-// HomeWork2/2
-
-// let number =  92358;
-// let string = String(number);
-// let newString = '';
-// for(i = 0; i < string.length ; i++){
-//     newString += `${string[i]} `;
-// };
-// console.log(newString);
-
+let arrNumbers9 = [
+    16, -37, 54, -4, 72, -56, 47, 4, -16, 25, -37, 46, 4, -51, 27, -63, 4, -54,
+    76, -4, 12, -35, 4, 47,
+];
+let maxEl = 0;
+let biggestElArr = arrNumbers9.reduce((accum, item, index) => {
+    if (item > accum) {
+        accum = item;
+        arrNumbers9[maxEl] = 0;
+        maxEl = index;
+    } else {
+        arrNumbers9[index] = 0;
+    }
+    return accum;
+}, 0);
+console.log(biggestElArr);
+console.log(arrNumbers9);
