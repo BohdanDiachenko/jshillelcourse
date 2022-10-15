@@ -8,7 +8,7 @@ const arrNumbers = [
 let amountPositiveElements = 0;
 const arrNumbersSum = arrNumbers.reduce((accum, item) => {
     if (item > 0) {
-        accum += item;
+        return accum + item;
         amountPositiveElements++;
     }
     return accum;
@@ -25,7 +25,7 @@ let arrNumbers1 = [
 let sequenceNumberMinEl;
 let minArrayElement = arrNumbers1.reduce((accum, item, index) => {
     if (item < accum) {
-        accum = item;
+        return accum = item;
         sequenceNumberMinEl = index;
     }
     return accum;
@@ -42,7 +42,7 @@ let arrNumbers2 = [
 let sequenceNumberMaxEl;
 let maxArrayElement = arrNumbers2.reduce((accum, item, index) => {
     if (item > accum) {
-        accum = item;
+        return accum = item;
         sequenceNumberMaxEl = index;
     }
     return accum;
@@ -103,7 +103,7 @@ let arrNumbers6 = [
 ];
 let sumEvenPositiveEl = arrNumbers6.reduce((accum, item) => {
     if (item > 0 && item % 2 === 0) {
-        accum += item;
+        return accum + item;
     }
     return accum;
 });
@@ -117,7 +117,7 @@ let arrNumbers7 = [
 ];
 let sumOddPositiveEl = arrNumbers7.reduce((accum, item) => {
     if (item > 0 && item % 2 !== 0) {
-        accum += item;
+        return accum + item;
     }
     return accum;
 });
@@ -131,7 +131,7 @@ let arrNumbers8 = [
 ];
 let productPositiveEl = arrNumbers8.reduce((accum, item) => {
     if (item > 0) {
-        accum *= item;
+        return accum * item;
     }
     return accum;
 });
