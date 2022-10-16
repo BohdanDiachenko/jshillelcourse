@@ -1,3 +1,8 @@
+const SECONDS_IN_HOUR = 3600;
+let hours = +prompt('введіть кількість годин які хочете перевести в секунди');
+let seconds = `${hours * SECONDS_IN_HOUR} секунд`;
+alert(seconds);
+
 let condition = false;
 let getUserLengthArray;
 do {
@@ -25,3 +30,4 @@ console.log(newArray);
 console.log(newArray.sort().sort((a, b) => a - b));
 newArray.splice(1, 3);
 console.log(newArray);
+
