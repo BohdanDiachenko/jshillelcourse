@@ -1,28 +1,28 @@
 
-let numOrStr = prompt("input number or string");
-console.log(numOrStr);
+// let numOrStr = prompt("input number or string");
+// console.log(numOrStr);
 
-switch (isNaN(numOrStr) || numOrStr) {
-    case null:
-        console.log("ви скасували");
+// switch (isNaN(numOrStr) || numOrStr) {
+//     case null:
+//         console.log("ви скасували");
 
-        break;
+//         break;
 
-    case "":
-        console.log("Empty String");
+//     case "":
+//         console.log("Empty String");
 
-        break;
+//         break;
 
-    case true:
-        console.log(" number is Ba_NaN");
+//     case true:
+//         console.log(" number is Ba_NaN");
 
-        break;
+//         break;
 
-    default:
-        console.log("OK!");
+//     default:
+//         console.log("OK!");
 
-        break;
-}
+//         break;
+// }
 
 
 // let arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?');
@@ -124,45 +124,48 @@ switch (isNaN(numOrStr) || numOrStr) {
 //     newString += `${string[i]} `;
 // };
 // console.log(newString);
-=======
-let firstNumber = +prompt('введіть перше число');
-let secondNumber = +prompt('введіть друге число');
-let thirdNumber = +prompt('введіть третє число');
-let arithmeticMean = `${(firstNumber+secondNumber+thirdNumber)/3}`;
-alert(arithmeticMean);
 
-const SECONDS_IN_HOUR = 3600;
-let hours = +prompt('введіть кількість годин які хочете перевести в секунди');
-let seconds = `${hours * SECONDS_IN_HOUR} секунд`;
-alert(seconds);
+// =======
 
-let condition = false;
-let getUserLengthArray;
-do {
-    getUserLengthArray = prompt("Введіть довжину масиву");
-    if (isNaN(getUserLengthArray) === true) {
-        //return "Please imput a number.";
-        alert("Будь ласка, введіть число");
-        condition = false;
-    } else {
-        condition = true;
-    }
-} while (condition === false);
 
-const newArray = [];
-for (let i = 0; i < getUserLengthArray; i++) {
-    newArray[i] = prompt(`Введіть елемент масиву № ${i + 1}`);
-    if (newArray[i] === "" || newArray[i] === null) {
-        delete newArray[i];
-    } else if (!isNaN(+newArray[i])) {
-        newArray[i] = Number(newArray[i]);
-    }
-}
+// let firstNumber = +prompt('введіть перше число');
+// let secondNumber = +prompt('введіть друге число');
+// let thirdNumber = +prompt('введіть третє число');
+// let arithmeticMean = `${(firstNumber+secondNumber+thirdNumber)/3}`;
+// alert(arithmeticMean);
 
-console.log(newArray);
-console.log(newArray.sort().sort((a, b) => a - b));
-newArray.splice(1, 3);
-console.log(newArray);
+// const SECONDS_IN_HOUR = 3600;
+// let hours = +prompt('введіть кількість годин які хочете перевести в секунди');
+// let seconds = `${hours * SECONDS_IN_HOUR} секунд`;
+// alert(seconds);
+
+// let condition = false;
+// let getUserLengthArray;
+// do {
+//     getUserLengthArray = prompt("Введіть довжину масиву");
+//     if (isNaN(getUserLengthArray) === true) {
+//         //return "Please imput a number.";
+//         alert("Будь ласка, введіть число");
+//         condition = false;
+//     } else {
+//         condition = true;
+//     }
+// } while (condition === false);
+
+// const newArray = [];
+// for (let i = 0; i < getUserLengthArray; i++) {
+//     newArray[i] = prompt(`Введіть елемент масиву № ${i + 1}`);
+//     if (newArray[i] === "" || newArray[i] === null) {
+//         delete newArray[i];
+//     } else if (!isNaN(+newArray[i])) {
+//         newArray[i] = Number(newArray[i]);
+//     }
+// }
+
+// console.log(newArray);
+// console.log(newArray.sort().sort((a, b) => a - b));
+// newArray.splice(1, 3);
+// console.log(newArray);
 
 
 
