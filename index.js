@@ -1,3 +1,10 @@
+
+let firstNumber = +prompt('введіть перше число');
+let secondNumber = +prompt('введіть друге число');
+let thirdNumber = +prompt('введіть третє число');
+let arithmeticMean = `${(firstNumber+secondNumber+thirdNumber)/3}`;
+alert(arithmeticMean);
+
 const SECONDS_IN_HOUR = 3600;
 let hours = +prompt('введіть кількість годин які хочете перевести в секунди');
 let seconds = `${hours * SECONDS_IN_HOUR} секунд`;
