@@ -67,9 +67,8 @@ const getArrayUserPhone = (users) => {
 console.log(getArrayUserPhone(users));
 
 const getArrayUserBalance = (users) => {
-    return users.reduce((userBalance, user) =>{
-            userBalance += Number(user.balance.replace('$','').replace(',', ''))
-        return (Math.round(userBalance * 100) / 100)  
+   return users.reduce((userBalance, user) =>{
+        return  userBalance + Number(user.balance.replace('$','').replace(',', ''));  
     }, 0)
 }
 
