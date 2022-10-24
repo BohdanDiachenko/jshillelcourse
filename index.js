@@ -8,8 +8,8 @@ function count() {
     let sum = 0;
     return function (number) {
         sum += number;
-        console.log(sum);
     };
+return sum;
 }
 const sum = count();
 
