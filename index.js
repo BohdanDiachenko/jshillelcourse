@@ -14,8 +14,4 @@ const sum = count();
 
 console.log(sum(3));
 console.log(sum(5));
-<<<<<<< HEAD
 console.log(sum(20));
-=======
-console.log(sum(20));
->>>>>>> 7366501f091a2c27f8508e59dd189b28f1d2acd1
