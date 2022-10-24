@@ -8,11 +8,11 @@ function count() {
     let sum = 0;
     return function (number) {
         sum += number;
+        return sum;
     };
-return sum;
 }
 const sum = count();
 
-sum(3);
-sum(5);
-sum(20);
+console.log(sum(3));
+console.log(sum(5));
+console.log(sum(20));
