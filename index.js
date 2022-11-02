@@ -1,168 +1,60 @@
-
-let numOrStr = prompt("input number or string");
-console.log(numOrStr);
-
-switch (isNaN(numOrStr) || numOrStr) {
-    case null:
-        console.log("ви скасували");
-
-        break;
-
-    case "":
-        console.log("Empty String");
-
-        break;
-
-    case true:
-        console.log(" number is Ba_NaN");
-
-        break;
-
-    default:
-        console.log("OK!");
-
-        break;
-}
-
-
-// let arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?');
-// let result;
-// if(arithmeticOperations === 'add' || arithmeticOperations === 'sub' || arithmeticOperations === 'mult' || arithmeticOperations === 'div'){
-//     let oneNumber = +(prompt('введіть перше число'));
-//     let twoNumber = +(prompt('введіть друге число'));
-//     if(arithmeticOperations === 'add'){
-//         arithmeticOperations = '+';
-//         result = oneNumber + twoNumber;
-//     };
-//     if (arithmeticOperations === 'sub'){
-//         arithmeticOperations = '-';
-//         result = oneNumber - twoNumber;
-//     };
-//     if (arithmeticOperations === 'mult'){
-//         arithmeticOperations = '*';
-//         result = oneNumber * twoNumber;
-//     };  
-//     if (arithmeticOperations === 'div'){
-//         arithmeticOperations = '/';
-//         result = oneNumber / twoNumber;
-//     };
-//     alert(`${oneNumber} ${arithmeticOperations} ${twoNumber} = ${result}`);
-// } 
-// else {
-//     alert('читай умову');
-// };
-
-
-
-// let arithmeticOperations;
-// let oneNumber;
-// let twoNumber
-// switch (arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?')) {
-
-//     case a = "add":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} + ${twoNumber} = ${oneNumber + twoNumber}`);
-//         break;
-
-//     case "sub":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} - ${twoNumber} = ${oneNumber - twoNumber}`);
-//         break;
-
-//     case "mult":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} * ${twoNumber} = ${oneNumber * twoNumber}`);;
-//         break;
-
-//     case "div":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} / ${twoNumber} = ${oneNumber / twoNumber}`);;
-//         break;
-        
-//     default:
-//         alert("Читай умову!");
-//         break;
-// };
-
-// let firstNumber = +prompt('введіть перше число');
-// let secondNumber = +prompt('введіть друге число');
-// let add = `${firstNumber}+${secondNumber} = ${firstNumber + secondNumber}`;
-// let sub = `${firstNumber}-${secondNumber} = ${firstNumber - secondNumber}`;
-// let mult = `${firstNumber}*${secondNumber} = ${firstNumber * secondNumber}`;
-// let div = `${firstNumber}/${secondNumber} = ${firstNumber / secondNumber}`;
-// let resolt = `Ваш результат:\n${add}\n${sub}\n${mult}\n${div}`;
-// alert(resolt);
-
-
-//homework2/1
-
-// let surName = prompt ('Enter your last name');
-
-// let firstName = prompt('Enter your firs name');
-
-// let patronymic = prompt('Enter your middle name');
-
-// let greeting = 'good morning ' + surName + ' ' + firstName + ' ' + patronymic;
-// // let greeting = `Good Morning ${surName} ${firstName} ${patronymic}`;
-
-
-// alert(greeting);
-
-
-
-
-// HomeWork2/2
-
-// let number =  92358;
-// let string = String(number);
-// let newString = '';
-// for(i = 0; i < string.length ; i++){
-//     newString += `${string[i]} `;
-// };
-// console.log(newString);
-=======
-let firstNumber = +prompt('введіть перше число');
-let secondNumber = +prompt('введіть друге число');
-let thirdNumber = +prompt('введіть третє число');
-let arithmeticMean = `${(firstNumber+secondNumber+thirdNumber)/3}`;
-alert(arithmeticMean);
-
-const SECONDS_IN_HOUR = 3600;
-let hours = +prompt('введіть кількість годин які хочете перевести в секунди');
-let seconds = `${hours * SECONDS_IN_HOUR} секунд`;
-alert(seconds);
-
-let condition = false;
-let getUserLengthArray;
-do {
-    getUserLengthArray = prompt("Введіть довжину масиву");
-    if (isNaN(getUserLengthArray) === true) {
-        //return "Please imput a number.";
-        alert("Будь ласка, введіть число");
-        condition = false;
-    } else {
-        condition = true;
+class Human {
+    name;
+    age;
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
-} while (condition === false);
-
-const newArray = [];
-for (let i = 0; i < getUserLengthArray; i++) {
-    newArray[i] = prompt(`Введіть елемент масиву № ${i + 1}`);
-    if (newArray[i] === "" || newArray[i] === null) {
-        delete newArray[i];
-    } else if (!isNaN(+newArray[i])) {
-        newArray[i] = Number(newArray[i]);
+    getHumanInfo() {
+        return `ім'я: ${this.name}
+                     вік:  ${this.age}`;
     }
 }
 
-console.log(newArray);
-console.log(newArray.sort().sort((a, b) => a - b));
-newArray.splice(1, 3);
-console.log(newArray);
+class Car {
+    make;
+    model;
+    yearOfRegistration;
+    numberPlate;
+    owner;
 
+    constructor(make, model, yearOfRegistration, numberPlate) {
+        this.make = make;
+        this.model = model;
+        this.yearOfRegistration = yearOfRegistration;
+        this.numberPlate = numberPlate;
+    }
 
+    assignOwner(instanceHuman) {
+        instanceHuman.age >= 18
+            ? (this.owner = instanceHuman)
+            : console.log("Приходь коли виповниться 18");
+        return this.owner;
+    }
+    getCarInfo() {
+        console.log(`
+            Інформація про автомобіль\n
+            марка: ${this.make}
+            модель: ${this.model}
+            рік виписку: ${this.yearOfRegistration}
+            номерний знак: ${this.numberPlate}
+            власник: ${this.owner ? this.owner.getHumanInfo() : "без власника"}
+        `);
+    }
+}
 
+const human1 = new Human("Сергій", 31);
+const human2 = new Human("Петро", 19);
+const human3 = new Human("Денис", 12);
+
+const audi = new Car("audi", "a4", 2015, "AS 45-344 DS");
+const volvo = new Car("volvo", "v90", 2019, "AE 22-344 DA");
+const opel = new Car("opel", "vivaro", 2012, "AL 26-323 DU");
+
+audi.assignOwner(human1);
+volvo.assignOwner(human2);
+opel.assignOwner(human3);
+
+audi.getCarInfo();
+volvo.getCarInfo();
+opel.getCarInfo();
