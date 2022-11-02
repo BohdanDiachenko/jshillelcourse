@@ -27,8 +27,8 @@ class House {
     getApartmentInfo (number){
         console.log(`
         Інформація про квартиру номер ${number}\n
-        Площа квартири: ${this.apartmentsArray[number-1].areaOfApartment} м²
         Кількість кімнат: ${this.apartmentsArray[number-1].numberOfRooms}
+        Площа квартири: ${this.apartmentsArray[number-1].areaOfApartment} м²
         Кількість мешканців: ${this.apartmentsArray[number-1].numberOfResidentsArray.length}\n
         Дані про мешканців:
         `)
@@ -99,7 +99,7 @@ houseOne.apartmentsArray[5].addResident('Калнишевський', 'Петр�
 
 
 houseOne.getHouseInfo()
-houseOne.getApartmentInfo(4)
+houseOne.getApartmentInfo(1)
 houseOne.getApartmentInfo(3)
 
 
@@ -121,6 +121,8 @@ houseTwo.apartmentsArray[0].addResident('Торопайко', 'Василь', '�
 houseTwo.apartmentsArray[0].addResident('Торопайко', 'Світлана', 'Федорівна', 'жіноча', 44)
 houseTwo.apartmentsArray[0].addResident('Торопайко', 'Ольга', 'Василівна', ' чоловіча', 20)
 houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Олександр', 'Іванович', 'чоловіча', 33)
+houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
+houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
 houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
 
 houseTwo.getHouseInfo()
