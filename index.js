@@ -1,168 +1,118 @@
+// Створити та описати сутності Багатоквартирного будинку, квартири, мешканця.
 
-let numOrStr = prompt("input number or string");
-console.log(numOrStr);
+// Додати можливість створювати нові будинки на певну кількість квартир.
 
-switch (isNaN(numOrStr) || numOrStr) {
-    case null:
-        console.log("ви скасували");
+// Не обмежувати кількість мешканців у квартирі
 
-        break;
-
-    case "":
-        console.log("Empty String");
-
-        break;
-
-    case true:
-        console.log(" number is Ba_NaN");
-
-        break;
-
-    default:
-        console.log("OK!");
-
-        break;
-}
-
-
-// let arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?');
-// let result;
-// if(arithmeticOperations === 'add' || arithmeticOperations === 'sub' || arithmeticOperations === 'mult' || arithmeticOperations === 'div'){
-//     let oneNumber = +(prompt('введіть перше число'));
-//     let twoNumber = +(prompt('введіть друге число'));
-//     if(arithmeticOperations === 'add'){
-//         arithmeticOperations = '+';
-//         result = oneNumber + twoNumber;
-//     };
-//     if (arithmeticOperations === 'sub'){
-//         arithmeticOperations = '-';
-//         result = oneNumber - twoNumber;
-//     };
-//     if (arithmeticOperations === 'mult'){
-//         arithmeticOperations = '*';
-//         result = oneNumber * twoNumber;
-//     };  
-//     if (arithmeticOperations === 'div'){
-//         arithmeticOperations = '/';
-//         result = oneNumber / twoNumber;
-//     };
-//     alert(`${oneNumber} ${arithmeticOperations} ${twoNumber} = ${result}`);
-// } 
-// else {
-//     alert('читай умову');
-// };
-
-
-
-// let arithmeticOperations;
-// let oneNumber;
-// let twoNumber
-// switch (arithmeticOperations = prompt('що ви хочете зробити(add, sub, mult, div)?')) {
-
-//     case a = "add":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} + ${twoNumber} = ${oneNumber + twoNumber}`);
-//         break;
-
-//     case "sub":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} - ${twoNumber} = ${oneNumber - twoNumber}`);
-//         break;
-
-//     case "mult":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} * ${twoNumber} = ${oneNumber * twoNumber}`);;
-//         break;
-
-//     case "div":
-//         oneNumber = +(prompt('введіть перше число'));
-//         twoNumber = +(prompt('введіть друге число'));
-//         alert(`${oneNumber} / ${twoNumber} = ${oneNumber / twoNumber}`);;
-//         break;
-        
-//     default:
-//         alert("Читай умову!");
-//         break;
-// };
-
-// let firstNumber = +prompt('введіть перше число');
-// let secondNumber = +prompt('введіть друге число');
-// let add = `${firstNumber}+${secondNumber} = ${firstNumber + secondNumber}`;
-// let sub = `${firstNumber}-${secondNumber} = ${firstNumber - secondNumber}`;
-// let mult = `${firstNumber}*${secondNumber} = ${firstNumber * secondNumber}`;
-// let div = `${firstNumber}/${secondNumber} = ${firstNumber / secondNumber}`;
-// let resolt = `Ваш результат:\n${add}\n${sub}\n${mult}\n${div}`;
-// alert(resolt);
-
-
-//homework2/1
-
-// let surName = prompt ('Enter your last name');
-
-// let firstName = prompt('Enter your firs name');
-
-// let patronymic = prompt('Enter your middle name');
-
-// let greeting = 'good morning ' + surName + ' ' + firstName + ' ' + patronymic;
-// // let greeting = `Good Morning ${surName} ${firstName} ${patronymic}`;
-
-
-// alert(greeting);
-
-
-
-
-// HomeWork2/2
-
-// let number =  92358;
-// let string = String(number);
-// let newString = '';
-// for(i = 0; i < string.length ; i++){
-//     newString += `${string[i]} `;
-// };
-// console.log(newString);
-=======
-let firstNumber = +prompt('введіть перше число');
-let secondNumber = +prompt('введіть друге число');
-let thirdNumber = +prompt('введіть третє число');
-let arithmeticMean = `${(firstNumber+secondNumber+thirdNumber)/3}`;
-alert(arithmeticMean);
-
-const SECONDS_IN_HOUR = 3600;
-let hours = +prompt('введіть кількість годин які хочете перевести в секунди');
-let seconds = `${hours * SECONDS_IN_HOUR} секунд`;
-alert(seconds);
-
-let condition = false;
-let getUserLengthArray;
-do {
-    getUserLengthArray = prompt("Введіть довжину масиву");
-    if (isNaN(getUserLengthArray) === true) {
-        //return "Please imput a number.";
-        alert("Будь ласка, введіть число");
-        condition = false;
-    } else {
-        condition = true;
+class House {
+    apartmentsArray
+    constructor(params) { 
+        this.city = params.city
+        this.street = params.street
+        this.houseNumber = params.houseNumber
+        this.numberOfApartments = params.numberOfApartments
+        this.apartmentsArray = [];
     }
-} while (condition === false);
-
-const newArray = [];
-for (let i = 0; i < getUserLengthArray; i++) {
-    newArray[i] = prompt(`Введіть елемент масиву № ${i + 1}`);
-    if (newArray[i] === "" || newArray[i] === null) {
-        delete newArray[i];
-    } else if (!isNaN(+newArray[i])) {
-        newArray[i] = Number(newArray[i]);
+    addApartament(apartament) {
+        if (apartament.apartmentNumber > this.numberOfApartments) {
+            console.log('Квартири з таким номером в даному будинку не існує');
+            return;
+        } else {
+            this.apartmentsArray[apartament.apartmentNumber - 1] = apartament; 
+        } 
     }
-}
+    logHouseInfo(){
+        console.log(`Будинок на ${this.numberOfApartments} квартир знаходиться за адресою:  Місто ${this.city}, вулиця ${this.street},${this.houseNumber}`);
+        return this
+    }
+    logApartmentInfo (number){
+        console.log(`
+        Інформація про квартиру номер ${number}\n
+        Кількість кімнат: ${this.apartmentsArray[number-1].numberOfRooms}
+        Площа квартири: ${this.apartmentsArray[number-1].areaOfApartment} м²
+        Кількість мешканців: ${this.apartmentsArray[number-1].numberOfResidentsArray.length}\n
+        Дані про мешканців:
+        `)
+        for(let i=0; i<this.apartmentsArray[number-1].numberOfResidentsArray.length; i++){
+            console.log(`
+            Прізвище: ${this.apartmentsArray[number-1].numberOfResidentsArray[i].firstName}
+            Ім'я: ${this.apartmentsArray[number-1].numberOfResidentsArray[i].lastName}
+            По батькові: ${this.apartmentsArray[number-1].numberOfResidentsArray[i].surname}
+            Стать: ${this.apartmentsArray[number-1].numberOfResidentsArray[i].sex}
+            Вік: ${this.apartmentsArray[number-1].numberOfResidentsArray[i].age}
+            `)
+        }
+        return this.apartmentsArray[number]
+    }
+    
+}  
+class Apartment{
+    areaOfApartment;
+    numberOfRooms;
+    apartmentNumber;
+    numberOfResidentsArray;
+    constructor(areaOfApartment, numberOfRooms, apartmentNumber) {
+        this.numberOfRooms = numberOfRooms
+        this.apartmentNumber = apartmentNumber
+        this.areaOfApartment = areaOfApartment
+        this.numberOfResidentsArray = []
+    } 
+    addResident(resident){
+        this.numberOfResidentsArray.push(resident)
+        return this.numberOfResidentsArray
+    }
+}   
+class Resident{
+    constructor(firstName, lastName, surname, sex, age){
+        this.firstName = firstName;
+        this.lastName = lastName
+        this.surname = surname
+        this.sex = sex
+        this.age = age
+    }
+}  
+const houseOne = new House({
+    city: 'Київ',
+    street: 'Володимирівська',
+    houseNumber: 24,
+    numberOfApartments: 6
+})
 
-console.log(newArray);
-console.log(newArray.sort().sort((a, b) => a - b));
-newArray.splice(1, 3);
-console.log(newArray);
+const apartment1 = new Apartment(78, 2, 1);
+const apartment2 = new Apartment(60, 2, 2);
+const apartment3 = new Apartment(121, 3, 3);
+const apartment4 = new Apartment(44, 1, 4);
+const apartment5 = new Apartment(65, 3, 5);
+const apartment6 = new Apartment(46, 2, 6);
 
+apartment1.addResident(new Resident('Торопайко', 'Василь', 'Іванович', 'чоловіча', 54));
+apartment1.addResident(new Resident('Торопайко', 'Світлана', 'Федорівна', 'жіноча', 44));
+apartment1.addResident(new Resident('Торопайко', 'Ольга', 'Василівна', ' чоловіча', 20));
+apartment2.addResident(new Resident('Черезтинногузадерищенко', 'Олександр', 'Іванович', 'чоловіча', 33));
+apartment2.addResident(new Resident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31));
+apartment3.addResident(new Resident('Нагорна', 'Христина', 'Павлівна', 'жіноча', 31));
+apartment3.addResident(new Resident('Нагорний', 'Петро', 'Олексійович', 'чоловіча', 31));
+apartment3.addResident(new Resident('Нагорна', 'Антоніна ', 'Петрівна', 'жіноча', 10));
+apartment3.addResident(new Resident('Нагорний', 'Євгенія ', 'Петрович', 'чоловіча', 12));
+apartment4.addResident(new Resident('Павлюк', 'Єфросинія', 'Павлівна', 'жіноча', 22));
+apartment5.addResident(new Resident('Козак', 'Катерина', 'Артемівна', 'жіноча', 31));
+apartment5.addResident(new Resident('Козак', 'Василь', 'Іванович', 'чоловіча', 31));
+apartment6.addResident(new Resident('Калнишевський', 'Петро', 'Павлівна', 'чоловіча', 70));
 
+houseOne.addApartament(apartment1);
+houseOne.addApartament(apartment2);
+houseOne.addApartament(apartment3);
+houseOne.addApartament(apartment4);
+houseOne.addApartament(apartment5);
+houseOne.addApartament(apartment6);
 
+console.log(houseOne);
+
+houseOne.logHouseInfo()
+
+houseOne.logApartmentInfo(1)
+houseOne.logApartmentInfo(2)
+houseOne.logApartmentInfo(3)
+houseOne.logApartmentInfo(4)
+houseOne.logApartmentInfo(5)
+houseOne.logApartmentInfo(6)
