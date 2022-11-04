@@ -13,18 +13,19 @@ class House {
         this.numberOfApartments = params.numberOfApartments
         this.apartmentsArray = [];
     }
-    apartmentNumber = 0;
-    addApartment( areaOfApartment, numberOfRooms, apartmentNumber = this.apartmentNumber+1){
-        if(this.apartmentNumber < this.numberOfApartments){
-            this.apartmentsArray.push(new Apartment(areaOfApartment, numberOfRooms, apartmentNumber))
-            this.apartmentNumber++
-        } return this.apartmentsArray
+    addApartament(apartament) {
+        if (apartament.apartmentNumber > this.numberOfApartments) {
+            console.log('Квартири з таким номером в даному будинку не існує');
+            return;
+        } else {
+            this.apartmentsArray[apartament.apartmentNumber - 1] = apartament; 
+        } 
     }
-    getHouseInfo(){
+    logHouseInfo(){
         console.log(`Будинок на ${this.numberOfApartments} квартир знаходиться за адресою:  Місто ${this.city}, вулиця ${this.street},${this.houseNumber}`);
         return this
     }
-    getApartmentInfo (number){
+    logApartmentInfo (number){
         console.log(`
         Інформація про квартиру номер ${number}\n
         Кількість кімнат: ${this.apartmentsArray[number-1].numberOfRooms}
@@ -41,13 +42,14 @@ class House {
             Вік: ${this.apartmentsArray[number-1].numberOfResidentsArray[i].age}
             `)
         }
-        return this.apartmentsArray[number-1]
+        return this.apartmentsArray[number]
     }
+    
 }  
 class Apartment{
-    apartmentNumber;
     areaOfApartment;
     numberOfRooms;
+    apartmentNumber;
     numberOfResidentsArray;
     constructor(areaOfApartment, numberOfRooms, apartmentNumber) {
         this.numberOfRooms = numberOfRooms
@@ -55,8 +57,8 @@ class Apartment{
         this.areaOfApartment = areaOfApartment
         this.numberOfResidentsArray = []
     } 
-    addResident(firstName, lastName, surname, sex, age){
-        this.numberOfResidentsArray.push(new Resident(firstName, lastName, surname, sex, age))
+    addResident(resident){
+        this.numberOfResidentsArray.push(resident)
         return this.numberOfResidentsArray
     }
 }   
@@ -76,55 +78,41 @@ const houseOne = new House({
     numberOfApartments: 6
 })
 
+const apartment1 = new Apartment(78, 2, 1);
+const apartment2 = new Apartment(60, 2, 2);
+const apartment3 = new Apartment(121, 3, 3);
+const apartment4 = new Apartment(44, 1, 4);
+const apartment5 = new Apartment(65, 3, 5);
+const apartment6 = new Apartment(46, 2, 6);
+
+apartment1.addResident(new Resident('Торопайко', 'Василь', 'Іванович', 'чоловіча', 54));
+apartment1.addResident(new Resident('Торопайко', 'Світлана', 'Федорівна', 'жіноча', 44));
+apartment1.addResident(new Resident('Торопайко', 'Ольга', 'Василівна', ' чоловіча', 20));
+apartment2.addResident(new Resident('Черезтинногузадерищенко', 'Олександр', 'Іванович', 'чоловіча', 33));
+apartment2.addResident(new Resident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31));
+apartment3.addResident(new Resident('Нагорна', 'Христина', 'Павлівна', 'жіноча', 31));
+apartment3.addResident(new Resident('Нагорний', 'Петро', 'Олексійович', 'чоловіча', 31));
+apartment3.addResident(new Resident('Нагорна', 'Антоніна ', 'Петрівна', 'жіноча', 10));
+apartment3.addResident(new Resident('Нагорний', 'Євгенія ', 'Петрович', 'чоловіча', 12));
+apartment4.addResident(new Resident('Павлюк', 'Єфросинія', 'Павлівна', 'жіноча', 22));
+apartment5.addResident(new Resident('Козак', 'Катерина', 'Артемівна', 'жіноча', 31));
+apartment5.addResident(new Resident('Козак', 'Василь', 'Іванович', 'чоловіча', 31));
+apartment6.addResident(new Resident('Калнишевський', 'Петро', 'Павлівна', 'чоловіча', 70));
+
+houseOne.addApartament(apartment1);
+houseOne.addApartament(apartment2);
+houseOne.addApartament(apartment3);
+houseOne.addApartament(apartment4);
+houseOne.addApartament(apartment5);
+houseOne.addApartament(apartment6);
+
 console.log(houseOne);
-houseOne.addApartment(120, 4);
-houseOne.addApartment(82, 3);
-houseOne.addApartment(61, 2);
-houseOne.addApartment(44, 1);
-houseOne.addApartment(62, 2);
-houseOne.addApartment(46, 1);
-houseOne.apartmentsArray[0].addResident('Торопайко', 'Василь', 'Іванович', 'чоловіча', 54)
-houseOne.apartmentsArray[0].addResident('Торопайко', 'Світлана', 'Федорівна', 'жіноча', 44)
-houseOne.apartmentsArray[0].addResident('Торопайко', 'Ольга', 'Василівна', ' чоловіча', 20)
-houseOne.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Олександр', 'Іванович', 'чоловіча', 33)
-houseOne.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
-houseOne.apartmentsArray[2].addResident('Нагорна', 'Христина', 'Павлівна', 'жіноча', 31)
-houseOne.apartmentsArray[2].addResident('Нагорний', 'Петро', 'Олексійович', 'чоловіча', 31)
-houseOne.apartmentsArray[2].addResident('Нагорна', 'Антоніна ', 'Петрівна', 'жіноча', 10)
-houseOne.apartmentsArray[2].addResident('Нагорний', 'Євгенія ', 'Петрович', 'чоловіча', 12)
-houseOne.apartmentsArray[3].addResident('Павлюк', 'Єфросинія', 'Павлівна', 'жіноча', 22)
-houseOne.apartmentsArray[4].addResident('Козак', 'Катерина', 'Артемівна', 'жіноча', 31)
-houseOne.apartmentsArray[4].addResident('Козак', 'Василь', 'Іванович', 'чоловіча', 31)
-houseOne.apartmentsArray[5].addResident('Калнишевський', 'Петро', 'Павлівна', 'чоловіча', 70)
 
+houseOne.logHouseInfo()
 
-houseOne.getHouseInfo()
-houseOne.getApartmentInfo(1)
-houseOne.getApartmentInfo(3)
-
-
-
-// <----=====---->
-
-const houseTwo = new House({
-    city: 'Вінниця',
-    street: 'Коцюбинського',
-    houseNumber: 12,
-    numberOfApartments: 20
-})
-console.log(houseTwo);
-houseTwo.addApartment(96, 3);
-houseTwo.addApartment(82, 3);
-houseTwo.addApartment(61, 2);
-
-houseTwo.apartmentsArray[0].addResident('Торопайко', 'Василь', 'Іванович', 'чоловіча', 54)
-houseTwo.apartmentsArray[0].addResident('Торопайко', 'Світлана', 'Федорівна', 'жіноча', 44)
-houseTwo.apartmentsArray[0].addResident('Торопайко', 'Ольга', 'Василівна', ' чоловіча', 20)
-houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Олександр', 'Іванович', 'чоловіча', 33)
-houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
-houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
-houseTwo.apartmentsArray[1].addResident('Черезтинногузадерищенко', 'Лариса', 'Павлівна', 'жіноча', 31)
-
-houseTwo.getHouseInfo()
-houseOne.getApartmentInfo(1)
-houseOne.getApartmentInfo(2)
+houseOne.logApartmentInfo(1)
+houseOne.logApartmentInfo(2)
+houseOne.logApartmentInfo(3)
+houseOne.logApartmentInfo(4)
+houseOne.logApartmentInfo(5)
+houseOne.logApartmentInfo(6)
