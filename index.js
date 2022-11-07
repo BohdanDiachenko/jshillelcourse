@@ -1,3 +1,7 @@
+// Вивести на сторінку таблицю 10 × 10, заповнену числами від 1 до 100 (таблиця створюється за допомогою JavaScript).
+
+// У HTML файлі для тих, хто забув, наведено приклад, як виглядає структура таблиці
+
 const container = document.createElement('div');
 container.style.cssText = `max-width: 1200px; height: 100vh; margin: 0 auto; background-color: #76d5cc3d; font-size: 20px; display: flex; flex-direction: column; justify-content: center;align-items: center;`
 document.body.prepend(container);
