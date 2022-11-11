@@ -3,17 +3,6 @@
 // При кожному завантаженні сторінки повинно виводитися випадково обране зображення.
 
 
-
-const wrapper = document.createElement('div');
-wrapper.className = 'wrapper';
-wrapper.style.cssText = 'display: grid; place-items: center; height: 100vh;'
-document.body.prepend(wrapper);
-
-const img = document.createElement('img');
-img.style.width = '800px';
-wrapper.prepend(img)
-
-
 const imagesArray = [
     {src: './image/dog1.jpeg', alt: 'dog1'},
     {src: './image/dog2.jpeg', alt: 'dog2'},
@@ -28,5 +17,5 @@ const randomImage = (function () {
     return imagesArray[randomNumber];
 }) ();
 
-img.setAttribute('src', randomImage.src);
-img.setAttribute('alt', randomImage.alt);
+document.querySelector('img').setAttribute('src', randomImage.src);
+document.querySelector('img').setAttribute('alt', randomImage.alt);
