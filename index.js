@@ -1,32 +1,24 @@
-// У папці `img` є зображення.
+// На сторінці інпут та кнопка.
 
-// При кожному завантаженні сторінки повинно виводитися випадково обране зображення.
+// При натисканні на кнопку - переходимо за посиланням, яке введено у інпут.
 
+// Також треба реалізувати перевірку введеного значення, чи вказаний протокол http/https.
 
-
-const wrapper = document.createElement('div');
-wrapper.className = 'wrapper';
-wrapper.style.cssText = 'display: grid; place-items: center; height: 100vh;'
-document.body.prepend(wrapper);
-
-const img = document.createElement('img');
-img.style.width = '800px';
-wrapper.prepend(img)
+// Якщо протокол не вказаний - додаємо https
 
 
-const imagesArray = [
-    {src: 'image/dog1.jpeg', alt: 'dog1'},
-    {src: 'image/dog2.jpeg', alt: 'dog2'},
-    {src: 'image/dog3.jpeg', alt: 'dog3'},
-    {src: 'image/dog4.jpeg', alt: 'dog4'},
-    {src: 'image/dog5.jpeg', alt: 'dog5'},
-    {src: 'image/dog6.jpeg', alt: 'dog6'},
-];
+const btn = document.querySelector('#button');
+const input = document.querySelector('input');
 
-const randomImage = (function () {
-    const randomNumber = Math.floor(Math.random() * imagesArray.length);
-    return imagesArray[randomNumber];
-}) ();
+function goToUrl (){
+    const protocol = 'https://';
+    if(input.value.split(':')[0] ==='https' || input.value.split(':')[0] ==='http'){
+        location.href = input.value
+    } else{
+        location.href = protocol + input.value
+    };
+};
 
-img.setAttribute('src', randomImage.src);
-img.setAttribute('alt', randomImage.alt);
+btn.addEventListener('click', () => {
+    goToUrl()
+});
