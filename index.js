@@ -151,7 +151,7 @@ function newTag(arr, id ) {
     for(const index of arr){
         if(index.category_id === id){
             const li = document.createElement('li');
-            li.setAttribute('data-product-id', `${index.id}`)
+            li.setAttribute('data-product-id', `${index.id}`);
             li.innerHTML = index.name;
             li.className = 'link';
             productsList.prepend(li);
@@ -169,16 +169,16 @@ function prod(arr, id) {
 };
 
 categoryList.addEventListener('click', (e) => {
-    newTag(products, Number(e.target.dataset.categoryId))
+    newTag(products, Number(e.target.dataset.categoryId));
 });
 
 productsList.addEventListener('click', (e) => {
-    prod(products, Number(e.target.dataset.productId))
+    prod(products, Number(e.target.dataset.productId));
 });
 
 buyButton.addEventListener('click', (e) => {
     message.style.visibility = "visible";
     setTimeout(() =>{
         location. reload()
-    }, 2000)
+    }, 2000);
 });
