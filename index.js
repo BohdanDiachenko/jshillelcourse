@@ -1,32 +1,37 @@
-// У папці `img` є зображення.
+// Створити програму для відображення результатів голосування.
 
-// При кожному завантаженні сторінки повинно виводитися випадково обране зображення.
+// З наступними умовами:
 
+// Як варіанти відповіді - смайлики. За замовчуванням, 5шт.
 
+// Виведення даних - смайлики в один рядок, під ними - кількість тих, хто проголосував за кожен смайл.
 
-const wrapper = document.createElement('div');
-wrapper.className = 'wrapper';
-wrapper.style.cssText = 'display: grid; place-items: center; height: 100vh;'
-document.body.prepend(wrapper);
+// При натисканні на смайл - під ним змінюється значення лічильника.
 
-const img = document.createElement('img');
-img.style.width = '800px';
-wrapper.prepend(img)
+// Реалізувати таким чином, щоб додавання нових варіантів відповіді не вело до додавання нових функцій.
 
 
-const imagesArray = [
-    {src: 'image/dog1.jpeg', alt: 'dog1'},
-    {src: 'image/dog2.jpeg', alt: 'dog2'},
-    {src: 'image/dog3.jpeg', alt: 'dog3'},
-    {src: 'image/dog4.jpeg', alt: 'dog4'},
-    {src: 'image/dog5.jpeg', alt: 'dog5'},
-    {src: 'image/dog6.jpeg', alt: 'dog6'},
-];
+const reactions = ["👍", "👎", "💚", "💩", "🤣"];
 
-const randomImage = (function () {
-    const randomNumber = Math.floor(Math.random() * imagesArray.length);
-    return imagesArray[randomNumber];
-}) ();
+const container = document.querySelector(".container");
 
-img.setAttribute('src', randomImage.src);
-img.setAttribute('alt', randomImage.alt);
+const reactionElements = reactions.map((reaction) => {
+    const wrapper = document.createElement("div");
+    const button = document.createElement("button");
+    button.innerText = reaction;
+    const counter = document.createElement("div");
+    counter.classList.add("counter");
+    counter.innerText = 0;
+    wrapper.append(button, counter);
+
+    return wrapper;
+});
+
+reactionElements.forEach((elem) => container.appendChild(elem));
+
+function addVote(event) {
+    if(event.target.tagName === 'BUTTON'){
+        Number(event.target.nextElementSibling.innerText++)
+    }
+}
+container.addEventListener('click', addVote);
