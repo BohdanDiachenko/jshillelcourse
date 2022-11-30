@@ -78,7 +78,6 @@ input:hover {
     transition: border-color 0.3s ease-in-out;
     border-color: #ff4747;
 }
-
 .error{
     border-color: #ff4747 !important;
 }
@@ -221,19 +220,6 @@ textarea{
     outline: 0;
     /* border: 1px solid red; */
 }
-/* mobil responsive */
-@media only screen and (max-width: 580px) {
-    .row {
-        flex-direction: column;
-    }
-    .row .column {
-        width: 90% !important;
-    }
-
-}
-    
-
-
 .table__wrapper{
     overflow: auto;
 }
@@ -248,21 +234,28 @@ thead th{
 tbody {
     background-color: rgba(255, 255, 255, 0.782);
 }
-
-
 table {
     margin-top: 100px;
     border-collapse: collapse;
     letter-spacing: 1px;
     width: 100%;
 }
-
 .table__wrapper td,
 .table__wrapper th {
     border: 1px solid rgb(190, 190, 190);
     padding: 10px 10px;
 }
-
 td {
     text-align: center;
+}
+
+/* mobil responsive */
+@media only screen and (max-width: 580px) {
+    .row {
+        flex-direction: column;
+    }
+    .row .column {
+        width: 90% !important;
+    }
+
 }
