@@ -296,3 +296,4 @@ function getFormValue(event) {
     console.log(values);
 }
 form.addEventListener('submit', getFormValue);
+console.log(navigator);
