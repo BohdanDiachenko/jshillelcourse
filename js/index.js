@@ -2,7 +2,7 @@ const form = document.forms.contact;
 
 const firstNameInput = document.getElementById("first-name");
 const firstNameError = document.getElementById("first-name-error");
-const emptyFirstNameError = document.getElementById("empty-first-name");
+const emptyFirstNameError = document.getElementById("empty-first-names");
 
 const lastNameInput = document.getElementById("last-name");
 const lastNameError = document.getElementById("last-name-error");
@@ -36,7 +36,7 @@ selectBtn.addEventListener("click", () => {
 items.forEach(item => {
     item.addEventListener("click", (e) =>{
         item.classList.toggle("checked");
-        
+
         let checked = document.querySelectorAll('.checked');
         let btnText = document.querySelector('.btn-text');
         
@@ -112,7 +112,6 @@ function getAllCheckBoxes(obj) {
     }
     return result
 }
-const languagesList = document.querySelector('.list-items');
 const languages = document.querySelectorAll('.item');
 
 function languageChecked(obj) {
