@@ -15,7 +15,6 @@ const result = document.querySelector('.result');
 const cardImg = document.querySelector('.product_card-img');
 const productCard = document.querySelector('#product_card');
 const orderList = document.querySelector('.order__list-wrap');
-const orderCounter = document.querySelector('.order_counter');
 
 
 let ordersArray = [];
@@ -23,7 +22,10 @@ let ordersArray = [];
 if (localStorage.getItem('orders')) {
     ordersArray = JSON.parse(localStorage.getItem('orders'));
     constructor(ordersArray);
-};
+} else {
+    orderCounter.innerText = '';
+    orderCounter.classList.add('bgcolor');
+}
 
 function constructor(obj) {
     orderListWrap.innerHTML = "";
@@ -204,7 +206,7 @@ function addOrder(obj) {
         product: obj.product,
         id: Date.now(),
     };
-    ordersArray = JSON.parse(localStorage.getItem('orders'));
+
     orderCounter.innerText = ordersArray.length + 1;
     orderCounter.classList.remove('bgcolor');
     ordersArray.push(newOrder);

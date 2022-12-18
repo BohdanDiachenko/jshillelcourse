@@ -8,6 +8,9 @@
 body {
     font-weight: 400;
     font-size: 14px;
+    background-image: linear-gradient(to right, rgba(49, 48, 71, 0.795) 0%, rgba(82, 65, 121, 0.46) 100%), url(../image/peakpx.jpg);
+
+    background-size: cover;
 }
 .none-display {
     display: none;
@@ -20,8 +23,8 @@ body {
 .left{
     width: 362px;
     height: 100%;
-    background: rgb(165,251,79);
-    background: linear-gradient(340deg, rgba(165,251,79,1) 0%, rgba(9,242,74,1) 35%, rgba(0,255,162,1) 100%);
+    /* background: rgb(165,251,79); */
+    /* background: linear-gradient(340deg, rgba(165,251,79,1) 0%, rgba(9,242,74,1) 35%, rgba(0,255,162,1) 100%); */
     position: fixed;
     top: 0;
     left: 0;
@@ -53,7 +56,7 @@ body {
     margin-right: 20px;
 }
 .active{
-    background: #fff;
+    background: rgba(255, 255, 255, 0.514);
     width: 100%;
     height: 47px;
     position: absolute;
@@ -61,12 +64,15 @@ body {
     top: 3%;
     z-index: -1;
     border-radius: 6px;
-    box-shadow: 0 5px 10px rgba(225, 255, 255, 0.4);
     display: none;
     transition: top 0.3s; 
 }
 .nav__categories li:hover a{
-    color: #07B23B;
+    color: #000000;
+    transition: 0.3s;
+}
+.nav__categories li:hover i{
+    color: #6ee247;
     transition: 0.3s;
 }
 .nav__categories li:hover ~ .active{
@@ -93,7 +99,8 @@ body {
     bottom: 40px;
     width: 60px;
     height: 60px;
-    background: #fff;
+    background-image: url(../image/1626192992_33-kartinkin-com-p-fon-dlya-messendzhera-krasivo-33.jpg);
+    background-size: cover;
     box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
     border-radius: 30px;
     transition: 0.4s;
@@ -108,7 +115,7 @@ body {
 .ordere__btn-wrapper{
     min-width: 100%;
     height: 60px;
-    background: #fff;
+    background: transparent;
     border-radius: 50%;
     
 }
@@ -165,7 +172,7 @@ body {
     right: -2%;
     top: -2%;
     border-radius: 50%;
-    background: rgb(255, 251, 0);
+    background: rgb(255, 188, 120);
     color: #000;
     text-align: center;
 }
@@ -173,7 +180,7 @@ body {
     background-color: transparent !important;
 }
 .main{
-    background: rgba(198, 43, 185, 0.281);
+    /* background: rgba(103, 102, 103, 0.281); */
     height: 100vh;
     margin: 0 350px;
     padding: 70px 60px;
@@ -194,7 +201,7 @@ body {
     border-radius: 10px;
     min-height: 250px;
     background: #fff;
-    box-shadow: 0 5px 10px rgba(225, 255, 255, 0.4);
+    /* box-shadow: 0 5px 10px rgba(225, 255, 255, 0.4); */
 }
 .products__list .link .img__product{
     width: 100%;
@@ -226,10 +233,11 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    background: rgb(213, 17, 17);
+    /* background: rgba(255, 255, 255, 0.232); */
     width: 350px;
     height: 100%;
 }
+
 #product_card{
     padding: 30px;
     
@@ -269,7 +277,7 @@ body {
     width: 100px;
     outline: none;
     border: none;
-    background-color: rgb(68, 240, 52);
+    background-color: rgb(205, 211, 204);
     border-radius: 5px;
     cursor: pointer;
 }
@@ -280,7 +288,6 @@ body {
     width: 0 !important; 
 }
 .counter_wrapper{
-    border: 1px solid rgb(93, 92, 92);
     width: 100px;
     display: flex;
     justify-content: center;
@@ -324,7 +331,7 @@ select{
 }
 
 .form__body{
-    background: rgb(138, 74, 241);
+    background: rgb(244, 238, 228);
     padding: 10px 15px;
     border-radius: 10px;
 }
@@ -390,7 +397,7 @@ select{
     margin: 0 auto 10px;
     padding: 10px;
     border-radius: 8px;
-    background: #e3edf7;
+    background: #e1d9ce91;
 }
 .order__list-wrap li:last-child{
     margin-bottom: 90px;
@@ -424,6 +431,7 @@ select{
 }
 .order__tab-height{
     max-height: 200px !important;
+
 }
 .order__tab td{
     border-right: 15px solid transparent;

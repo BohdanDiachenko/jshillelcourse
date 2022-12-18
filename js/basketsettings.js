@@ -3,6 +3,7 @@ const orderWrap = document.querySelector('.order');
 const orderTitle = document.querySelector('.order__title');
 const orderListWrap = document.querySelector('.order__list-wrap');
 const ordersClose = document.querySelector('.orders__close');
+const orderCounter = document.querySelector('.order_counter');
 
 
 function openCloseOrders() {
