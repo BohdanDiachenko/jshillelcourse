@@ -4,69 +4,150 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .wrapper {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-        }
-        .centr{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            place-items: center;
-            gap: 1rem;
-            max-width: 900px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        li {
-            padding: 0.5rem;
-            cursor: pointer;
-        }
-
-        li:active {
-            color: blue;
-        }
-
-        button {
-            padding: 0.5rem 2rem;
-            margin: 1rem 0;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <script src="https://kit.fontawesome.com/890c274f53.js" crossorigin="anonymous"></script>
+    <title>Homework-30</title>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <ul id="categories" class="centr">
-                <li data-category-id="1">Toys</li>
-                <li data-category-id="2">Sports</li>
-                <li data-category-id="3">Food</li>
-                <li data-category-id="4">Grocery</li>
-                <li data-category-id="5">Garden</li>
-            </ul>
-            <ul id="products" class="centr">
-                
-            </ul>
-            <div id = "product_card" class="centr">      
-                <div id="description">
+    <header>
 
-                </div>        
-                <button id="buy-button">Buy</button>
-                <div id="message">The product has been added to the basket</div>
+    </header>
+    <main>
+        <div class="wrapper">
+            <div class="container">
+                <div class="left">
+                    <a href="#" class="logo">
+                        MyShop
+                    </a>
+                    <ul id="categories" class="nav__categories">
+                        <li><a href="#" data-category-id="1"><i class="fa-solid fa-martini-glass-citrus"></i>Alcohol</a></li>
+                        <li><a href="#" data-category-id="2"><i class="fa-solid fa-utensils"></i>Food</a></li>
+                        <li><a href="#" data-category-id="3"><i class="fa-solid fa-volleyball"></i>Sports</a></li>
+                        <li><a href="#" data-category-id="4"><i class="fa-solid fa-basket-shopping"></i>Grocery</a></li>
+                        <li><a href="#" data-category-id="5"><i class="fa-solid fa-stapler"></i>Stationery</a></li>
+                        <div class="active"></div>
+                    </ul>
+                    
+                    <div class="order">
+                        <div class="order__btn">
+                            <div class="ordere__btn-wrapper">
+                                <!-- <span id="order__counter"></span> -->
+                                <i class="fa-brands fa-shopify basket"></i>
+                                <p class="order__title">My Orders</p>
+                                <i class="fa-solid fa-square-xmark orders__close disNon"></i>
+                                <span class="order_counter"></span>
+                            </div>
+                        </div>
+                        <ul class="order__list-wrap vis__hidden">
+
+                        </ul>                      
+                    </div>
+                </div>
+                <div class="main">
+                    <ul id="products" class="products__list"></ul>
+                </div>
+                <div class="right">
+                    <div id="product_card" class="centr disNon"> 
+                        <div class="description_wrapper">
+                            <div class="product_card-wrap">
+                                <img class="product_card-img">
+                                <div class="product_card-right">
+                                    <div class="price_wrap">
+                                        <h2 class="description_title disNon"></h2>
+                                        <span class="price disNon"></span> <br>
+                                    </div>
+                                    <button id="buy-button" class="">Buy</button>
+                                </div>
+                            </div>
+                            <div id="description"></div> <br>
+                        </div>
+                            <form action="#" id="form" class="form__body disNon">
+                                <h1 class="form__title">Ordering</h1>
+                                <div class="form__item personalData">
+                                    <input
+                                        id="formLastName"
+                                        name="lastName"
+                                        type="text"
+                                        placeholder="LastName"
+                                        title="Разрешено от 2 до 20 символов"
+                                    />
+                                    <input
+                                        id="formFirstName"
+                                        name="firstName"
+                                        type="text"
+                                        placeholder="FirstName"
+                                        title="Разрешено от 2 до 20 символов"
+                                    />
+                                    <input
+                                        id="formPatronymic"
+                                        name="patronymic"
+                                        type="text"
+                                        placeholder="Patronymic"
+                                        title="Разрешено от 2 до 20 символов"
+                                    />
+                                </div>
+                                <label for="city"></label>
+                                <select name="city" id="city">
+                                    <option value="Kyiv">Kyiv</option>
+                                    <option value="Kharkiv">Kharkiv</option>
+                                    <option value="Odesa">Odesa</option>
+                                    <option value="Dnipro">Dnipro</option>
+                                    <option value="Donetsk">Donetsk</option>
+                                    <option value="Zaporizhzhia">Zaporizhzhia</option>
+                                    <option value="Lviv">Lviv</option>
+                                    <option value="Vinnytsia">Vinnytsia</option>
+                                </select>
+                                <div class="form__item">
+                                    <label for="post">Nova Poshta Warehouse</label>
+                                    <select name="NovaPoshta" id="post">
+                                        <option value="№1">№1</option>
+                                        <option value="№2">№2</option>
+                                        <option value="№3">№3</option>
+                                        <option value="№4">№4</option>
+                                        <option value="№5">№5</option>
+                                        <option value="№6">№6</option>
+                                        <option value="№7">№7</option>
+                                        <option value="№8">№8</option>
+                                    </select>
+                                </div>
+                                <div class="form__item">
+                                    <p>
+                                        <label
+                                            >Postpaid
+                                            <input type="radio" name="payment" class="post" value="postpaid" checked/>
+                                        </label>
+                                        <label 
+                                            >Payment by bank card
+                                            <input type="radio" name="payment" class="post" value="payment by bank card"/>
+                                        </label>
+                                    </p>
+                                    <div class="items counter_wrapper">
+                                        <div class="counter items__control minus" data-action="minus">-</div>
+                                        <div class="counter quantity" data-counter>1</div>   
+                                        <div class="counter items__control plus" data-action="plus">+</div>
+                                    </div>
+                                    <div class="form__footer">
+                                        <div class="price__wrapper">
+                                            <span>Total - </span>
+                                            <span class="total__price"></span>
+                                        </div>
+                                        <button type="submit" class="form-button">Buy</button>
+                                    </div> 
+                                </div>
+                                <span class="errors"></span>
+                            </form>
+
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <script src="./index.js"></script>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/database.js"></script>
+    <script src="js/basketsettings.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>
