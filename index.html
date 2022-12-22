@@ -1,72 +1,30 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .wrapper {
-            display: grid;
-            place-items: center;
-            height: 100vh;
-        }
-        .centr{
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            flex-direction: column;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            place-items: center;
-            gap: 1rem;
-            max-width: 900px;
-        }
-
-        ul {
-            list-style-type: none;
-        }
-
-        li {
-            padding: 0.5rem;
-            cursor: pointer;
-        }
-
-        li:active {
-            color: blue;
-        }
-
-        button {
-            padding: 0.5rem 2rem;
-            margin: 1rem 0;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Product list</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <style>
+    .product{
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="container">
-            <ul id="categories" class="centr">
-                <li data-category-id="1">Toys</li>
-                <li data-category-id="2">Sports</li>
-                <li data-category-id="3">Food</li>
-                <li data-category-id="4">Grocery</li>
-                <li data-category-id="5">Garden</li>
-            </ul>
-            <ul id="products" class="centr">
-                
-            </ul>
-            <div id = "product_card" class="centr">      
-                <div id="description">
-
-                </div>        
-                <button id="buy-button">Buy</button>
-                <div id="message">The product has been added to the basket</div>
-            </div>
-        </div>
-    </div>
-    <script src="./index.js"></script>
+  <div class="container">
+    <section class="content">
+      <div class="title">
+        <h1>Product list</h1>
+        <a class="title__link" href="index.html">Go to main page</a>
+      </div>
+      <ul class="products">
+        
+      </ul>
+    </section>
+  </div>
+  <script src="./script/index.js" type="module"></script>
 </body>
 </html>
