@@ -12,7 +12,7 @@ const IdVerification = number => {
 let idInside = '';
 let userId = '';
 searchOne.addEventListener('click', async (e) => {
-	e.preventDefault
+	e.preventDefault();
 	if (IdVerification(id.value)) {
 		idInside = id.value
 		userId = await addPost()
