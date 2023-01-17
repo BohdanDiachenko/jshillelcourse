@@ -1,35 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/890c274f53.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <div class="popup dis__none">
-        <p>An error occurred</p>
-    </div>
-    <div class="container">
-        <div class="form__wrapper">
-            <div action="" class="inside">
-                <div class="search__icon" type="button">
-                    <i class="search  fa-solid fa-magnifying-glass"></i>
-                    <i class="close fa-solid fa-angles-right dis__none"></i>
-                </div>
-                <div class="cliar__icon ">
-                    <input type="text" class="search__post" id="search" placeholder="Search post by id..."/>
-                    <i class="search__one fa-magnifying-glass fa-solid" ></i>
-                </div>
-            </div>
-        </div>
-        <div class="wrapper">
-            
-        </div>
-    </div>
-    <script src="js/script.js"></script>
-    <script src="js/scriptstyle.js"></script>
+	<div class="container">
+		<div class="left__block">
+			<form class="form">
+				<label class="lable" for="search">Enter post id from 1 to 100</label>
+				<input type="text" id="post__search">
+				<button type="button" class="search__btn">Search</button>
+				<span class="error"></span>
+			</form>
+		</div>
+		<div class="post__wrapper">
+			
+		</div>
+		<div class="coments">
+
+		</div>
+
+	</div>
+
+	
+	<script src="./index.js"></script>
 </body>
 </html>
